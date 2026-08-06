@@ -19,6 +19,10 @@ This repository hosts the official Privacy Policies, Terms of Service, and compl
 ### 🧲 Polar Clash
 * **Privacy Policy URL**: [https://tri-technologies.github.io/legal/polar-clash/](https://tri-technologies.github.io/legal/polar-clash/)
 * **App Store Listing**: Google Play Store
+
+### 🎲 Decision Kit
+* **Privacy Policy URL**: [https://tri-technologies.github.io/legal/decision-kit/](https://tri-technologies.github.io/legal/decision-kit/)
+* **App Store Listing**: Google Play Store
 ---
 
 For inquiries or support, please contact software.a2h@gmail.com.
