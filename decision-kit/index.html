@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Decision Kit by A2H Software</title>
+  <meta name="description" content="Privacy Policy for Decision Kit — the offline decision-making app featuring a spin wheel, coin toss, dice roller, and card picker. No data collected. No accounts required." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Privacy Policy — Decision Kit" />
+  <meta property="og:description" content="Decision Kit collects no personal data, requires no sign-up, and works fully offline. Read our full privacy policy here." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-top:       #181A2A;
+      --bg-mid:       #1F2138;
+      --bg-bottom:    #272A46;
+      --ink0:         #FBFBFF;
+      --ink1:         #C2C4E0;
+      --ink2:         #8B8EB8;
+      --purple:       #B084FF;
+      --gold:         #FFC13B;
+      --emerald:      #2FE8AE;
+      --crimson:      #FF4D75;
+      --glass-border: rgba(255, 255, 255, 0.16);
+      --glass-bg:     rgba(10, 10, 20, 0.42);
+      --glass-light:  rgba(255, 255, 255, 0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Sora', system-ui, sans-serif;
+      background: linear-gradient(160deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--bg-bottom) 100%);
+      min-height: 100vh;
+      color: var(--ink1);
+      line-height: 1.7;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ── Ambient glows ── */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+    }
+    body::before {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(176,132,255,0.22) 0%, transparent 70%);
+      top: -120px; left: -160px;
+    }
+    body::after {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(255,77,117,0.14) 0%, transparent 70%);
+      bottom: 60px; right: -120px;
+    }
+
+    .glow-gold {
+      position: fixed;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,193,59,0.12) 0%, transparent 70%);
+      filter: blur(60px);
+      top: 40%; left: -120px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-emerald {
+      position: fixed;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(47,232,174,0.10) 0%, transparent 70%);
+      filter: blur(60px);
+      bottom: 20%; right: -80px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ── */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 52px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--glass-border);
+      margin-bottom: 48px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .logo-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #D9BBFF 0%, #3D1670 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 32px rgba(176,132,255,0.35);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--purple);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .app-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink0);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ink0);
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--ink2);
+    }
+
+    .meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--glass-light);
+      border: 1px solid var(--glass-border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--ink2);
+      margin-top: 16px;
+    }
+
+    .meta-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--emerald);
+      display: inline-block;
+    }
+
+    /* ── Summary banner ── */
+    .summary-banner {
+      background: linear-gradient(135deg, rgba(47,232,174,0.10) 0%, rgba(176,132,255,0.08) 100%);
+      border: 1px solid rgba(47,232,174,0.25);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .summary-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .summary-item strong {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink0);
+      margin-bottom: 2px;
+    }
+
+    .summary-item span {
+      font-size: 12.5px;
+      color: var(--ink2);
+    }
+
+    /* ── Section cards ── */
+    .section-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: border-color 0.2s;
+    }
+
+    .section-card:hover {
+      border-color: rgba(255,255,255,0.26);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-badge {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .badge-purple  { background: rgba(176,132,255,0.18); }
+    .badge-emerald { background: rgba(47,232,174,0.15);  }
+    .badge-gold    { background: rgba(255,193,59,0.15);  }
+    .badge-crimson { background: rgba(255,77,117,0.15);  }
+    .badge-blue    { background: rgba(92,200,255,0.15);  }
+    .badge-neutral { background: rgba(255,255,255,0.08); }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink0);
+      letter-spacing: -0.1px;
+    }
+
+    p {
+      font-size: 14.5px;
+      color: var(--ink1);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    li {
+      font-size: 14.5px;
+      color: var(--ink1);
+      padding-left: 24px;
+      position: relative;
+    }
+
+    li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--purple);
+      font-size: 13px;
+    }
+
+    /* Storage table */
+    .storage-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 13.5px;
+    }
+
+    .storage-table thead tr {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .storage-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--purple);
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .storage-table td {
+      padding: 10px 14px;
+      color: var(--ink1);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      vertical-align: top;
+    }
+
+    .storage-table tr:last-child td { border-bottom: none; }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--emerald);
+      background: rgba(47,232,174,0.08);
+      border-radius: 5px;
+      padding: 1px 6px;
+    }
+
+    /* Tool pills */
+    .tool-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tool-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-light);
+      font-size: 13px;
+      color: var(--ink0);
+      font-weight: 600;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: rgba(176,132,255,0.08);
+      border: 1px solid rgba(176,132,255,0.22);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--ink1);
+    }
+
+    .highlight-box strong { color: var(--purple); }
+
+    /* ── Contact ── */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .contact-link {
+      font-size: 14.5px;
+      color: var(--purple);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(176,132,255,0.35);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--ink0);
+      border-color: var(--ink0);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding-top: 48px;
+      border-top: 1px solid var(--glass-border);
+      margin-top: 48px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--ink2);
+    }
+
+    footer .tools-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 560px) {
+      h1 { font-size: 26px; }
+      .section-card { padding: 22px; }
+      .summary-banner { padding: 20px; }
+      .storage-table { font-size: 12.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-gold"></div>
+  <div class="glow-emerald"></div>
+
+  <div class="wrapper">
+
+    <!-- ── Header ── -->
+    <header>
+      <div class="logo-row">
+        <div class="logo-icon">🎲</div>
+        <div class="logo-text">
+          <span class="eyebrow">Decision Toolkit</span>
+          <span class="app-name">Decision Kit</span>
+        </div>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">We built Decision Kit to be the safest kind of app&nbsp;— one that doesn't need your data at all.</p>
+      <div class="meta">
+        <span class="meta-dot"></span>
+        Effective date: August 6, 2025 &nbsp;·&nbsp; Developer: A2H Software
+      </div>
+    </header>
+
+    <!-- ── TL;DR summary ── -->
+    <div class="summary-banner" role="region" aria-label="Privacy summary">
+      <div class="summary-item">
+        <span class="summary-icon">🔒</span>
+        <div>
+          <strong>No data collected</strong>
+          <span>We collect absolutely nothing about you or your usage.</span>
+        </div>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">📡</span>
+        <div>
+          <strong>Fully offline</strong>
+          <span>The app never makes any network requests.</span>
+        </div>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">👤</span>
+        <div>
+          <strong>No accounts</strong>
+          <span>No sign-up, no login, no email required — ever.</span>
+        </div>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">📱</span>
+        <div>
+          <strong>Stays on your device</strong>
+          <span>Your options and preferences live only on your phone.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 1. Overview ── -->
+    <section class="section-card" id="overview">
+      <div class="section-header">
+        <div class="section-badge badge-purple">🎯</div>
+        <h2>1. Overview</h2>
+      </div>
+      <p>
+        <strong style="color:var(--ink0)">Decision Kit</strong> is a free offline decision-making tool developed by <strong style="color:var(--ink0)">A2H Software</strong>. It provides four randomness tools to help you break decision paralysis:
+      </p>
+      <div class="tool-pills">
+        <span class="tool-pill">🎡 Spin Wheel</span>
+        <span class="tool-pill">🪙 Coin Toss</span>
+        <span class="tool-pill">🎲 Dice Roller</span>
+        <span class="tool-pill">🃏 Card Picker</span>
+      </div>
+      <p style="margin-top:18px;">
+        This Privacy Policy describes what information the app handles, how it is used, and your rights as a user. By installing or using Decision Kit, you acknowledge this policy.
+      </p>
+    </section>
+
+    <!-- ── 2. Information We Collect ── -->
+    <section class="section-card" id="information-collected">
+      <div class="section-header">
+        <div class="section-badge badge-emerald">📋</div>
+        <h2>2. Information We Do Not Collect</h2>
+      </div>
+      <p>Decision Kit <strong style="color:var(--ink0)">does not collect, store, transmit, or share any personal information</strong>. Specifically, we do not collect:</p>
+      <ul>
+        <li>Name, email address, phone number, or any other contact information</li>
+        <li>Device identifiers, advertising IDs, or unique hardware identifiers</li>
+        <li>Location data (GPS, IP address, or any geolocation)</li>
+        <li>Usage analytics, session data, or behavioural tracking</li>
+        <li>Crash reports or diagnostic logs sent to any server</li>
+        <li>Content you enter into the app (your options, questions, labels)</li>
+        <li>Photos, camera, microphone, or contact data — we request none of these permissions</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>In short:</strong> There is no server. There is no database. There is no account. Nothing you type or tap ever leaves your device.
+      </div>
+    </section>
+
+    <!-- ── 3. Local Storage ── -->
+    <section class="section-card" id="local-storage">
+      <div class="section-header">
+        <div class="section-badge badge-gold">💾</div>
+        <h2>3. Local Data Storage</h2>
+      </div>
+      <p>
+        Decision Kit saves your <strong style="color:var(--ink0)">preferences and options locally</strong> on your device using Android's standard local storage (AsyncStorage). This data never leaves your phone and is not accessible to A2H Software or any third party.
+      </p>
+      <p>The following data is stored locally so your setup persists between app sessions:</p>
+
+      <table class="storage-table" role="table" aria-label="Local storage keys">
+        <thead>
+          <tr>
+            <th scope="col">Storage Key</th>
+            <th scope="col">What it saves</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="mono">settings-store</span></td>
+            <td>Sound effects toggle (on/off), haptic feedback toggle (on/off)</td>
+          </tr>
+          <tr>
+            <td><span class="mono">wheel-store</span></td>
+            <td>Your spin wheel question and the list of options you've added</td>
+          </tr>
+          <tr>
+            <td><span class="mono">coin-store</span></td>
+            <td>Custom labels for "Heads" and "Tails" faces</td>
+          </tr>
+          <tr>
+            <td><span class="mono">dice-game-store</span></td>
+            <td>Your dice roller question and up to 6 options</td>
+          </tr>
+          <tr>
+            <td><span class="mono">card-store</span></td>
+            <td>Your card picker question and up to 52 options</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:16px;">
+        You can clear all locally stored data at any time by using the <strong style="color:var(--ink0)">"Clear All"</strong> button within each tool, or by uninstalling the app.
+      </p>
+    </section>
+
+    <!-- ── 4. Permissions ── -->
+    <section class="section-card" id="permissions">
+      <div class="section-header">
+        <div class="section-badge badge-blue">🔑</div>
+        <h2>4. Device Permissions</h2>
+      </div>
+      <p>Decision Kit requests <strong style="color:var(--ink0)">only one device capability</strong>:</p>
+      <ul>
+        <li>
+          <strong style="color:var(--ink0)">Vibration</strong> — used solely to provide haptic feedback (tactile pulses) when you interact with the tools. This is entirely optional; you can disable it in the app's Settings screen.
+        </li>
+      </ul>
+      <p style="margin-top:14px;">Decision Kit does <strong style="color:var(--ink0)">not</strong> request or use:</p>
+      <ul>
+        <li>Camera or microphone access</li>
+        <li>Location or GPS permissions</li>
+        <li>Contacts, calendar, or files</li>
+        <li>Internet / network access (no <code style="font-family:monospace;font-size:13px;color:var(--ink2)">INTERNET</code> permission declared on Android)</li>
+        <li>Push notifications</li>
+        <li>Biometric authentication</li>
+      </ul>
+    </section>
+
+    <!-- ── 5. Third-Party Services ── -->
+    <section class="section-card" id="third-party">
+      <div class="section-header">
+        <div class="section-badge badge-crimson">🔗</div>
+        <h2>5. Third-Party Services</h2>
+      </div>
+      <p>
+        Decision Kit is built with <strong style="color:var(--ink0)">Expo</strong> and <strong style="color:var(--ink0)">React Native</strong> — open-source frameworks. No third-party analytics SDKs (e.g. Firebase Analytics, Facebook SDK, Mixpanel, Crashlytics) are integrated into this app.
+      </p>
+      <p>
+        The app is distributed through the <strong style="color:var(--ink0)">Google Play Store</strong>. Google may collect certain data as part of the Play Store platform independently of this app (e.g. crash reports you opt into via device settings). This is governed by <a class="contact-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+      </p>
+      <p>
+        We do not share any data with third parties because we do not collect any data to share.
+      </p>
+    </section>
+
+    <!-- ── 6. Children ── -->
+    <section class="section-card" id="children">
+      <div class="section-header">
+        <div class="section-badge badge-gold">👧</div>
+        <h2>6. Children's Privacy</h2>
+      </div>
+      <p>
+        Decision Kit does not collect personal information from anyone, including children under the age of 13. Because the app operates entirely offline and stores no user data on any server, it poses no privacy risk to children. The app complies with the Children's Online Privacy Protection Act (COPPA) and equivalent regulations.
+      </p>
+    </section>
+
+    <!-- ── 7. Data Security ── -->
+    <section class="section-card" id="security">
+      <div class="section-header">
+        <div class="section-badge badge-emerald">🛡️</div>
+        <h2>7. Data Security</h2>
+      </div>
+      <p>
+        Because Decision Kit stores all data locally on your device and transmits nothing over any network, the security of your data depends on your device's own security (screen lock, device encryption, etc.). We do not maintain any servers, databases, or cloud infrastructure that could be compromised.
+      </p>
+    </section>
+
+    <!-- ── 8. Changes ── -->
+    <section class="section-card" id="changes">
+      <div class="section-header">
+        <div class="section-badge badge-neutral">📝</div>
+        <h2>8. Changes to This Policy</h2>
+      </div>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will revise the "Effective date" at the top of this page and publish the updated policy at the same URL. We encourage you to review this page periodically.
+      </p>
+      <p>
+        Because the app is offline and we have no way to contact you, changes to the policy will be communicated via an updated version of this page and app store release notes.
+      </p>
+    </section>
+
+    <!-- ── 9. Contact ── -->
+    <section class="section-card" id="contact">
+      <div class="section-header">
+        <div class="section-badge badge-purple">✉️</div>
+        <h2>9. Contact Us</h2>
+      </div>
+      <p>
+        If you have any questions or concerns about this Privacy Policy or Decision Kit, please contact us:
+      </p>
+      <div class="contact-row">
+        <span>🏢</span>
+        <div>
+          <strong style="color:var(--ink0)">A2H Software</strong><br>
+          <a class="contact-link" href="mailto:privacy@a2hsoftware.com">privacy@a2hsoftware.com</a>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:13.5px; color:var(--ink2);">
+        We will respond to all privacy inquiries within 30 days.
+      </p>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+      <div class="tools-row" aria-hidden="true">🎡🪙🎲🃏</div>
+      <p>
+        <strong style="color:var(--ink0)">Decision Kit</strong> — a product of A2H Software
+      </p>
+      <p style="margin-top:6px;">No sign-up &nbsp;·&nbsp; Works fully offline &nbsp;·&nbsp; No accounts &nbsp;·&nbsp; No data collection</p>
+      <p style="margin-top:14px; font-size:12px;">
+        &copy; 2025 A2H Software. All rights reserved.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
